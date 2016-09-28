@@ -4,11 +4,11 @@
   repos.requestRepos = function(callback) {
     // TODO: refactor these requests into an $.ajax call
     $.when(
-     $.get('/github/users/ackenepah')
+     $.get('/github/users/codefellows-seattle-301d12/repos')
      .done(function(data) {
        repos.allRepos = data;
      }),
-     $.get('/github/users/ackenepah/followers' +
+     $.get('/github/users/patci/followers' +
             '?per_page=5' +
             '&sort=updated')
             .done(function(data) {
