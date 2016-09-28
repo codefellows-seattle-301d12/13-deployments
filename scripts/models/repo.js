@@ -4,17 +4,9 @@
   repos.requestRepos = function(callback) {
     // TODO: refactor these requests into an $.ajax call
     $.when(
-     $.ajax({
-       url: 'https://api.github.com/users/codefellows-seattle-301d12/repos' +
-            '?per_page=10' +
-            '&sort=updated',
-       type: 'GET',
-       headers: { 'Authorization': 'token ' + githubToken },
-       success: function(data) {
-         // NOTE: since the 'data' paramter comes back as an
-         // array of objects, we can reassign allRepos below.
-         repos.allRepos = data;
-       }
+     $.get('/github/users/codefellows-seattle-301d12')
+     .done(function(data) {
+       
      }),
      $.ajax({
        url: 'https://api.github.com/users/patci/followers' +
