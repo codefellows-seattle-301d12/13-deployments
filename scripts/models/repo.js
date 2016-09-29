@@ -13,5 +13,7 @@
         return aRepo[attr];
       });
     };
-    module.repos = repos;
-  };})(window);
+  };
+  module.repos = repos;
+}
+)(window);
